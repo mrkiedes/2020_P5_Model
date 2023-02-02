@@ -34,6 +34,25 @@ public class TicTacToeUtilties {
         PlayTicTacToe.makeAMove();
     }
 
+    // Calculate the statistics of the game
+    public static void calculateStats(){
+        int count0 = 0;
+        int countX = 0;
+        for(int k = 0; k < moves.length; k++){
+            if(moves[k].equals("0")){
+                count0++;
+            }else if(moves[k].equals("X")){
+                countX++;
+            }
+        }
+        System.out.println("Congratulations to our winner!  This game's statistics are below.");
+        System.out.println("0 made " + count0 + " moves.");
+        System.out.println("X made " + countX + " moves.");
+        System.out.println("There were " + (9 - count0 - countX) + " unused spaces on the board.");
+        System.out.println("Feel free to play again sometime!");
+    }
+
+
     public static void select0(int boxNum){
         moves[boxNum] = "0";
 
@@ -54,22 +73,5 @@ public class TicTacToeUtilties {
         return false;
     }
 
-    public static void calculateStats(){
-        int count0 = 0;
-        int countX = 0;
-        for(int k = 0; k < moves.length; k++){
-            if(moves[k].equals("0")){
-                count0++;
-            }else if(moves[k].equals("X")){
-                countX++;
-            }
-        }
-        System.out.println("Congratulations to our winner!  This game's statistics are below.");
-        System.out.println("0 made " + count0 + " moves.");
-        System.out.println("X made " + countX + " moves.");
-        System.out.println("There were " + (9 - count0 - countX) + " unused spaces on the board.");
-        System.out.println("Feel free to play again sometime!");
 
-
-    }
 }
